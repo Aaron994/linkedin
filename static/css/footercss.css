@@ -1,0 +1,14 @@
+.footer {
+    width: 100%;
+    background: #283e4a;
+    /* background: #202020; */
+    text-align: center;
+    color: #999;
+    padding: 12px 0px;
+    font-size: 12px;
+}
+
+
+.layui-nav-item:hover:focus:active {
+    background-color: #ffdb3a;
+}

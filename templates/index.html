@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+    <title>领英知友</title>
+    <link rel="icon" href="{{url_for('static',filename='img/logo.ico') }}">
+    <!--引入css文件-->
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/footercss.css') }}">
+    <link rel='stylesheet' href="{{ url_for('static',filename='layui/css/layui.css') }}" media="all">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    {% block link %}{% endblock %}
+</head>
+<body>
+<nav>
+
+
+<ul class="layui-nav layui-bg-green" lay-filter="" style="text-align: center;">
+    <div class="layui-container">
+        <div class="layui-row">
+            <div class="layui-col-md1">
+                <li class="layui-nav-item"> <a href="/" title="领英知友"><img width="60" src="/static/img/logo.png"></a></li>
+            </div>
+            <div class="layui-col-md1"></div>
+            <div class="layui-col-md1"></div>
+
+            <div class="layui-col-md9">
+                  <li class="layui-nav-item"><a href="">最新活动</a></li>
+  <li class="layui-nav-item "><a href="">产品</a></li>
+  <li class="layui-nav-item"><a href="">大数据</a></li>
+  <li class="layui-nav-item">
+    <a href="javascript:;">解决方案</a>
+    <dl class="layui-nav-child"> <!-- 二级菜单 -->
+      <dd><a href="">移动模块</a></dd>
+      <dd><a href="">后台模版</a></dd>
+      <dd><a href="">电商平台</a></dd>
+    </dl>
+  </li>
+  <li class="layui-nav-item"><a href="">社区</a></li>
+            </div>
+        </div>
+    </div>
+
+
+</ul>
+
+
+</nav>
+
+
+<div class="box">
+    {% block box %} {% endblock %}
+</div>
+
+
+<footer>
+    <div class="layui-container layui-bg-black fixed-bottom footer" style="width: 100%; font-size: 12px">
+	<div class="layui-row">
+		<!-- 友情链接 -->
+		<div class="layui-col-md6" style="text-align: center;">
+			<h3>友情链接：</h3>
+			<a href="http://linkedinjl.com" target="_blank">领英知友官网-need to change</a><br>
+			<a href="http://linkedinjl.com/help" target="_blank">领英知友帮助中心-need to change</a><br>
+			<a href="https://www.linkedin.com/help/linkedin?trk=footer_d_flagship3_feed" target="_blank">Linkedin帮助中心</a>
+		</div>
+		<!-- 联系我们 -->
+		<div class="layui-col-md6" style="text-align: center;">
+			<h3>联系我们：</h3>
+			<div >
+				<div style="text-align: center;">
+					<p><img src="/static/img/mobile.png" width="16">全国热线：13060578564</p>
+					<a href="http://wpa.qq.com/msgrd?v=3&amp;uin=1192558663&amp;site=qq&amp;menu=yes" target="_blank">
+                        <img src="/static/img/qq.png" width="16">客服：1192558663</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="layui-row" style="text-align: center;">
+		<p>Copyright © 领英知友Linkedinfriend. All Rights Reserved. <a href="https://beian.miit.gov.cn" target="_blank">报备号</a></p>
+	</div>
+</div>
+</footer>
+
+<script>
+//注意：导航 依赖 element 模块，否则无法进行功能性操作
+layui.use('element', function(){
+  var element = layui.element;
+
+  //…
+});
+
+</script>
+<script src="{{ url_for('static',filename='layui/layui.js') }}" charset="utf-8"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js" charset="utf-8"></script>
+<script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+</body>
+</html>

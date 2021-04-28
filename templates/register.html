@@ -1,0 +1,83 @@
+{% extends 'index.html' %}
+{% block title %}
+注册
+{% endblock %}
+
+{% block link %}
+{% endblock %}
+
+{% block box %}
+    <div class = 'regis_box regis_box_on' id="box">
+        <!--css-->
+        <div class="">
+            <!--头部提醒-->
+            <div class="font_title">
+                注册新用户
+                <hr class="">
+            </div>
+            <!--表单-->
+            <form class="layui-form" role="form" id="form_regis" method="post" action="{{ url_for('regist') }}"
+                  name="form_regis" onsubmit="return register()">
+                <!--每一行-->
+                <div class="layui-form-item">
+                    <label class="layui-form-label">注册账号</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="account" id="user_name" autocomplete="off" placeholder="登录用户名，不少于6个字符" class="layui-input">
+                    </div>
+                </div>
+
+                         <div class="layui-form-item">
+                    <label class="layui-form-label">显示名称</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="user_title" autocomplete="off" placeholder="显示名称" class="layui-input">
+                    </div>
+
+                    <div class="layui-form-item">
+                    <label class="layui-form-label">密码</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="password" id="user_password" autocomplete="off" placeholder="密码6到20位，只能包含字幕、数字" class="layui-input">
+                    </div>
+
+                </div>
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label">确认密码</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="check_password" autocomplete="off" placeholder="请输入确认密码" class="layui-input">
+                    </div>
+
+                </div>
+                <div id="error_box" style="color: red;">
+                    <br>
+                </div>
+                <!--注册按钮-->
+                             <div class="btn_submit_regis">
+                                 <button type="submit" class="layui-btn layui-btn-normal">注册</button>
+                             </div>
+
+                             <!--协议提示-->
+                         </div>
+            </form>
+
+
+
+        </div>
+    </div>
+<script>
+    $('#user_name').change(function (){
+        $.get(
+            '{{ url_for('regist') }}',
+            {
+                account: $('#user_name').val(),
+                password: $('#user_password').val()
+
+            },
+            function (data){
+                if (data != 'ok')
+                    $('#error_box').html(data)
+            }
+        )
+    })
+</script>
+{% endblock %}
+
